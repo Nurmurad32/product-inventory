@@ -4,12 +4,6 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { IoMdArrowRoundBack } from 'react-icons/io'
 
-// type PreviewPageProps = {
-//   params: {
-//     id: string | number
-//   }
-// }
-
 export async function generateMetadata({ params }: {params: Promise<{ id: string }>}): Promise<Metadata> {
   const { id } = await params
   const product = await fetchProductById(id)
@@ -27,7 +21,7 @@ export default async function ProductPreviewPage({ params }: {params: Promise<{ 
   if (!product?.id) return notFound()
 
   return (
-    <main className="p-6 max-w-7xl mx-auto">
+    <main className="p-3 max-w-7xl mx-auto">
       <Link href="/">
         <div className="text-md mb-6 bg-[#FE5001] p-1 px-2 rounded-md text-[#1A0E1C] cursor-pointer text-right flex items-center justify-end hover:text-[#1a0e1c8a]">
           <IoMdArrowRoundBack className="text-[14px] mr-1" />

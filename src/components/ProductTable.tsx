@@ -1,12 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
-
-
-'use client'
 import Link from 'next/link'
 import { Product } from '@/types/product'
-import Loading from '@/app/loading'
 
 export default function ProductTable({ products }: { products: Product[] }) {
+  if (!products) {
+    return (
+      <div className="border border-[#FE5001] p-4 text-center text-gray-500">
+        Loading...
+      </div>
+    )
+  }
 
   return (
     <div className="overflow-x-auto">
@@ -20,7 +23,10 @@ export default function ProductTable({ products }: { products: Product[] }) {
           </tr>
         </thead>
         <tbody className='border border-[#FE5001]'>
-          {!products ? <Loading />
+          {products.length === 0
+            ? <tr>
+              <td className="px-4 py-2">No product found</td>
+            </tr>
             : products.map((product, index) => (
               <tr key={product.id} className={index % 2 === 0 ? 'bg-white' : 'bg-[#fe500117] rounded-md'}>
                 <td className="px-4 py-2">
@@ -33,12 +39,15 @@ export default function ProductTable({ products }: { products: Product[] }) {
                   </Link>
                 </td>
                 <td className="px-4 py-2">${product.price}</td>
-                <td className="px-4 py-2"><span className='text-[12px] bg-[#FE5001] p-1 rounded-md text-white'>{product.category.name}</span></td>
+                <td className="px-4 py-2">
+                  <span className='text-[12px] bg-[#FE5001] p-1 rounded-md text-white'>
+                    {product.category.name}
+                  </span>
+                </td>
               </tr>
             ))}
         </tbody>
       </table>
-
     </div>
   )
 }

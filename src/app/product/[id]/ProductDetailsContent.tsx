@@ -10,7 +10,7 @@ export default function ProductDetailsContent({ product }: { product: Product })
     const [mainImage, setMainImage] = useState(product.images?.[0])
 
     return (
-        <main className="p-6 max-w-7xl mx-auto">
+        <main >
             <div
                 className="text-md mb-6 bg-[#FE5001] p-1 px-2 rounded-md text-[#1A0E1C] cursor-pointer text-right flex items-center justify-end hover:text-[#1a0e1c8a]"
                 onClick={() => history.back()}

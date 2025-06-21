@@ -8,7 +8,7 @@ import Link from 'next/link'
 import { IoMdArrowRoundBack } from 'react-icons/io'
 
 type Props = {
-  params: { id: string }
+  params: { id: string | number }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

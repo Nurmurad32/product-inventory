@@ -2,12 +2,16 @@ import { fetchProductById } from '@/lib/api'
 import ProductDetailsContent from './ProductDetailsContent'
 import { notFound } from 'next/navigation'
 
-export default async function ProductPage({
-  params,
-}: {
-  params: { id: string }
-}) {
-  const product = await fetchProductById(params.id)
+type Props = {
+  params: {
+    id: string
+  }
+}
+
+export default async function ProductPage({ params }: Props) {
+  const { id } = await Promise.resolve(params)
+
+  const product = await fetchProductById(id)
 
   if (!product?.id) return notFound()
 

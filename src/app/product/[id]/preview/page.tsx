@@ -12,18 +12,28 @@ type Props = {
 }
 
 // ✅ SEO Metadata
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const product = await fetchProductById(params.id)
-  console.log("type", typeof(params.id))
+// export async function generateMetadata({ params }: Props): Promise<Metadata> {
+//   const product = await fetchProductById(params.id)
+//   console.log("type", typeof(params.id))
+
+//   return {
+//     title: product?.title || 'Product Preview',
+//     description: product?.description?.slice(0, 150) || 'Product details preview',
+//     openGraph: {
+//       title: product?.title,
+//       description: product?.description?.slice(0, 150),
+//       images: product?.images?.[0] ? [product.images[0]] : [],
+//     },
+//   }
+// }
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  const { id } = await Promise.resolve(params) // ✅ explicitly await params
+
+  const product = await fetchProductById(id)
 
   return {
-    title: product?.title || 'Product Preview',
-    description: product?.description?.slice(0, 150) || 'Product details preview',
-    openGraph: {
-      title: product?.title,
-      description: product?.description?.slice(0, 150),
-      images: product?.images?.[0] ? [product.images[0]] : [],
-    },
+    title: `${product.title} - Product Details`,
+    description: product.description,
   }
 }
 

@@ -4,13 +4,13 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { IoMdArrowRoundBack } from 'react-icons/io'
 
-type PreviewPageProps = {
-  params: {
-    id: string | number
-  }
-}
+// type PreviewPageProps = {
+//   params: {
+//     id: string | number
+//   }
+// }
 
-export async function generateMetadata({ params }: PreviewPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: {params: Promise<{ id: string }>}): Promise<Metadata> {
   const { id } = await params
   const product = await fetchProductById(id)
 
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: PreviewPageProps): Promise<Me
   }
 }
 
-export default async function ProductPreviewPage({ params }: PreviewPageProps) {
+export default async function ProductPreviewPage({ params }: {params: Promise<{ id: string }>}) {
   const { id } = await params
   const product = await fetchProductById(id)
 

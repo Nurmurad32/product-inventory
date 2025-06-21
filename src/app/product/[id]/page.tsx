@@ -2,13 +2,13 @@ import { fetchProductById } from '@/lib/api'
 import ProductDetailsContent from './ProductDetailsContent'
 import { notFound } from 'next/navigation'
 
-type ProductPageProps = {
-  params: {
-    id: string | number
-  }
-}
+// type ProductPageProps = {
+//   params: {
+//     id: string | number
+//   }
+// }
 
-export default async function ProductPage({ params }: ProductPageProps) {
+export default async function ProductPage({ params }: {params: Promise<{ id: string }>}) {
     const { id } = await params
   const product = await fetchProductById(id)
 

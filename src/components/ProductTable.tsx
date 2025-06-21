@@ -1,8 +1,6 @@
 'use client'
 import Link from 'next/link'
 import { Product } from '@/types/product'
-import Image from 'next/image'
-import SafeImage from './SafeImage'
 import Loading from '@/app/loading'
 
 export default function ProductTable({ products }: { products: Product[] }) {

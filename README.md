@@ -3,7 +3,7 @@
 A modern and responsive Product Inventory application built with **Next.js**, **TypeScript**, and **Tailwind CSS**
 
 Live Preview: [🔗 View Deployed App](https://your-vercel-link.vercel.app)  
-GitHub Repo: [🔗 View on GitHub](https://github.com/yourusername/strativ-product-inventory)
+GitHub Repo: [🔗 View on GitHub](https://github.com/Nurmurad32/product-inventory.git)
 
 ---
 
@@ -50,5 +50,5 @@ GitHub Repo: [🔗 View on GitHub](https://github.com/yourusername/strativ-produ
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/yourusername/strativ-product-inventory.git
-cd strativ-product-inventory
+git clone https://github.com/Nurmurad32/product-inventory.git
+cd product-inventory

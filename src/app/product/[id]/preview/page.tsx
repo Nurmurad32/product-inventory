@@ -1,5 +1,3 @@
-// src/app/product/[id]/preview/page.tsx
-
 import { fetchProductById } from '@/lib/api'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'

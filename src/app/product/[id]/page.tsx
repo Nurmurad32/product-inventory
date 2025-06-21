@@ -1,5 +1,3 @@
-// src/app/product/[id]/page.tsx
-
 import { fetchProductById } from '@/lib/api'
 import ProductDetailsContent from './ProductDetailsContent'
 import { notFound } from 'next/navigation'

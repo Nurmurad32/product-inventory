@@ -2,7 +2,7 @@
 
 A modern and responsive Product Inventory application built with **Next.js**, **TypeScript**, and **Tailwind CSS**
 
-Live Preview: [🔗 View Deployed App](https://your-vercel-link.vercel.app)  
+Live Preview: [🔗 View Deployed App](https://product-inventory-beta.vercel.app/)  
 GitHub Repo: [🔗 View on GitHub](https://github.com/Nurmurad32/product-inventory.git)
 
 ---

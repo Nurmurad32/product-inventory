@@ -9,15 +9,15 @@ type Props = {
 }
 
 export default async function ProductPage({ params }: Props) {
-  const { id } = await Promise.resolve(params)
+  const { id } = params; // ✅ FIXED
 
-  const product = await fetchProductById(id)
+  const product = await fetchProductById(id);
 
-  if (!product?.id) return notFound()
+  if (!product?.id) return notFound();
 
   return (
     <main className="p-6 max-w-5xl mx-auto">
       <ProductDetailsContent product={product} />
     </main>
-  )
+  );
 }

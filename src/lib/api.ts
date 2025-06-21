@@ -9,7 +9,7 @@ export async function fetchProducts({
     offset?: number
     limit?: number
 }): Promise<Product[]> {
-    const res = await fetch(`${BASE_URL}?${offset}&limit=${limit}`)
+    const res = await fetch(`${BASE_URL}?offset=${offset}&limit=${limit}`)
 
     if (!res.ok) throw new Error('Failed to fetch products')
 

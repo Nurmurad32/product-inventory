@@ -14,6 +14,7 @@ type Props = {
 // ✅ SEO Metadata
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = await fetchProductById(params.id)
+  console.log("type", typeof(params.id))
 
   return {
     title: product?.title || 'Product Preview',

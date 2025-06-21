@@ -3,11 +3,11 @@ import { notFound } from 'next/navigation'
 import ProductDetailsContent from './ProductDetailsContent'
 import Loading from './loading'
 
-type PageProps = {
+type Props = {
   params: { id: string }
 }
 
-export default async function ProductDetailsPage({ params }: PageProps) {
+export default async function ProductDetailsPage({ params }: Props) {
     const { id } = params
     const product = await fetchProductById(id)
     if (!product) return <Loading />

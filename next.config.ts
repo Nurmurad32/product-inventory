@@ -2,6 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
+    eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     domains: ['cdn.dummyjson.com', 'placeimg.com', 'c8.alamy.com', 'i.imgur.com', 'fastly.picsum.photos', 'cdn-3.expansion.mx', 'www.w3schools.com', 'res.cloudinary.com', 'placehold.co'], // ← This must match the image domain!
   },

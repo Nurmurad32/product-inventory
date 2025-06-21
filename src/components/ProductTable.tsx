@@ -21,13 +21,6 @@ export default function ProductTable({ products }: { products: Product[] }) {
             : products.map((product, index) => (
               <tr key={product.id} className={index % 2 === 0 ? 'bg-white' : 'bg-[#fe500117] rounded-md'}>
                 <td className="px-4 py-2">
-                  {/* <SafeImage
-                  src={product.images?.[0]}
-                  alt={product.title}
-                  width={35}
-                  height={35}
-                  className="object-cover rounded"
-                /> */}
                   <img src={product.images?.[0]} alt={product.title} width={35} height={35} />
                 </td>
 

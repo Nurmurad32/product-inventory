@@ -1,3 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
+
+
 import { fetchProductById } from '@/lib/api'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
